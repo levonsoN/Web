@@ -1,0 +1,236 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+div {
+    display: block;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#backgroundGradient {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background: linear-gradient(-30deg, #ff9382, #36e8b3, #fd448b, #2aa0ff);
+    animation: backgroundGradient 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes backgroundGradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+#background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9;
+}
+
+#backgroundLeft.initial-animation, #backgroundLeft {
+    position: absolute;
+    height: 100vh;
+    left: -30px;
+    transition: all 500ms;
+}
+
+#backgroundLeft.initial-animation {
+    animation: translateLeft ease 750ms 1 forwards;
+}
+
+@keyframes translateLeft {
+    0% {
+        opacity: 0;
+        left: -60px;
+    }
+    100% {
+        opacity: 1;
+        left: -30px;
+    }
+}
+
+#backgroundRight.initial-animation, #backgroundRight {
+    position: absolute;
+    height: 100vh;
+    right: -30px;
+    transition: all 500ms;
+}
+
+#backgroundRight.initial-animation {
+    animation: translateRight ease 750ms 1 forwards;
+}
+
+@keyframes translateRight {
+    0% {
+        opacity: 0;
+        right: -60px;
+    }
+    100% {
+        opacity: 1;
+        right: -30px;
+    }
+}
+
+#backgroundLeft:hover {
+    left: 0;
+    filter: contrast(115%);
+}
+
+#backgroundRight:hover {
+    right: 0;
+    filter: contrast(115%);
+}
+
+#body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none
+}
+
+#main {
+    position: relative;
+    z-index: 1;
+    width: 1000px;
+    top: 15px;
+    margin: 0 auto 100px;
+    pointer-events: auto;
+    backdrop-filter: blur(40px) brightness(120%);
+}
+
+#header {
+    font-family: Arial, serif;
+    margin-left: 30px;
+    font-size: 80pt;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: white;
+    text-align: left;
+}
+
+form {
+    margin-left: 30px;
+    margin-right: 30px;
+    overflow: hidden;
+}
+
+textarea, input[type=text] {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 0;
+    border: 2px white solid;
+    background: transparent;
+    font-family: Arial, serif;
+    font-size: 16pt;
+    color: white;
+    transition: all 500ms;
+    resize: none;
+}
+
+textarea:focus, input[type=text]:focus {
+    outline: none;
+    transform: scale(1.02) skew(-2deg);
+}
+input[type=text]:-webkit-autofill,
+input[type=text]:-webkit-autofill:hover,
+input[type=text]:-webkit-autofill:focus,
+input[type=text]:-webkit-autofill:active{
+    border: 2px #ffffff solid;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0 1000px rgb(255, 110, 166) inset !important;
+    transition: all 500ms;
+}
+
+input[type=text].formName {
+    width: 320px;
+}
+
+#email, textarea {
+    width: 792px;
+}
+
+textarea {
+    height: 200px;
+    vertical-align: bottom;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.67);
+}
+
+label {
+    display: inline-block;
+    font-family: Arial, serif;
+    font-size: 16pt;
+    color: white;
+    width: 115px;
+    margin-bottom: 10px;
+}
+
+#sendButtonBlock {
+    text-align: center;
+}
+
+#sendButton {
+    display: block;
+    width: 200px;
+    font-family: Arial, serif;
+    font-size: 30pt;
+    margin: 0 auto 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 0;
+    background-color: transparent;
+    color: white;
+    transition: all 500ms;
+}
+
+#sendButton:hover {
+    transform: scale(1.05) skew(-10deg);
+    border-color: #4bbec0;
+}
+
+#toMain {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    transition: all 500ms ease;
+    cursor: pointer;
+}
+
+#toMain:hover {
+    transform: scale(1.05);
+}
+
+
+#toMain a {
+    color: rgba(255, 255, 255, 0.80);
+    font-family: Arial, serif;
+    font-size: 14pt;
+}
+

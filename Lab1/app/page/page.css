@@ -1,0 +1,177 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+div {
+    display: block;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#headerBlock.initial-animation h3, h3 {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: white;
+    font-size: 100pt;
+    font-family: Arial, serif;
+
+}
+#headerBlock.initial-animation h3
+{
+    animation: headerFadeIn ease 700ms 1 forwards;
+}
+
+@keyframes  headerFadeIn {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background: linear-gradient(-30deg, #ff1f6d, #0067cb);
+    animation: smallHueShift 15s ease infinite;
+}
+
+#svgBack {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    bottom: 0px;
+    animation: smallHueShift 15s ease infinite;
+}
+
+@keyframes smallHueShift {
+    0% {
+        filter: hue-rotate(-30deg);
+    }
+    25% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+    75% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(-30deg);
+    }
+}
+
+#main {
+    position: absolute;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 265px);
+    top: 165px;
+    left: 20px;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    backdrop-filter: blur(40px) brightness(130%);
+}
+
+.gallery.initial-animation, .gallery {
+    transition: all 500ms ease;
+    margin-right: 10px;
+    display: inline-block;
+    height: 100%;
+    cursor: pointer;
+}
+
+.gallery.initial-animation
+{
+    animation: galleryFadeIn ease 700ms 1 forwards;
+}
+
+@keyframes  galleryFadeIn {
+    from{
+        opacity: 0;
+        transform: scale(0);
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+}
+
+.gallery:hover {
+    transform: scale(1.02);
+    filter: contrast(110%);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.33);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+#toMain.initial-animation, #toMain {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    transition: all 500ms ease;
+    cursor: pointer;
+}
+#toMain.initial-animation{
+    animation: toMainFadeIn ease 700ms 1 forwards;
+}
+@keyframes toMainFadeIn {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#toMain:hover {
+    transform: scale(1.05);
+}
+
+
+#toMain a {
+    color: rgb(255, 255, 255);
+    font-family: Arial, serif;
+    font-size: 14pt;
+}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inspect All Regions Page</title>
+    <link rel="stylesheet" href="/generic.css">
+</head>
+<body>
+<h1>Inspect All Regions</h1>
+<h3>Regions List</h3>
+<div class="content">
+    <table>
+        <tr>
+            <th>Region Id</th>
+            <th>Region Name</th>
+            <th>Inspect</th>
+        </tr>
+        <tr th:each="region: ${regions}">
+            <td th:text="${region.getId()}"></td>
+            <td th:text="${region.getName()}"></td>
+            <td><a th:href="@{regions/{id}(id=${region.getId()})}">view</a></td>
+        </tr>
+    </table>
+</div>
+<hr>
+<button onclick="location.href='regions/new'">Create New Region</button>
+</body>
+</html>

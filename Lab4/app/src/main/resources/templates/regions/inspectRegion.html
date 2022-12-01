@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inspect Region Data Page</title>
+    <link rel="stylesheet" href="/generic.css">
+</head>
+<body>
+<h1>Inspect Region Data</h1>
+<p>
+    Region Id: <span th:text="${region.getId()}"/>
+    <br>
+    Region Name: <span th:text="${region.getName()}"/>
+    <br>
+    Region Area: <span th:text="${region.getArea()}"/> km<sup>2</sup>
+</p>
+<h3>Weather Data of Region</h3>
+<div class="content">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Temperature</th>
+            <th>Precipitation</th>
+        </tr>
+        <tr th:each="weather: ${region.getWeathers()}">
+            <td th:text="${weather.getDate()}"></td>
+            <td th:text="${weather.getTemperature()}"></td>
+            <td th:text="${weather.getPrecipitation()}"></td>
+        </tr>
+    </table>
+</div>
+<hr>
+<a class="no-style" th:href="@{/regions/{id}/edit(id=${region.getId()})}">
+    <button>Edit Region</button>
+</a>
+<form class="inline-form" th:method="DELETE" th:action="@{/regions/{id}(id=${region.getId()})}">
+    <button type="submit">Delete Region</button>
+</form>
+<hr>
+<a href="/regions">Back to the Regions list</a>
+</body>
+</html>

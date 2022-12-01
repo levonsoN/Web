@@ -1,0 +1,257 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+div {
+    display: block;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background-repeat: no-repeat;
+    background-image: url("back_img.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#background::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: backFadeIn ease 1200ms 1 forwards;
+}
+
+@keyframes backFadeIn {
+    100% {
+        backdrop-filter: contrast(110%) brightness(50%) blur(4px);
+        filter: blur(4px);
+    }
+}
+
+#main {
+    width: 1000px;
+    border-top: 15px;
+    margin: 0 auto;
+}
+
+#crack_img {
+    position: absolute;
+    z-index: 1;
+    mix-blend-mode: difference;
+    transform: translate(-7px, -7px) rotate(-15deg);
+    transition: transform 500ms ease;
+}
+#crack_img:hover {
+    transform: translate(30px, -17px) rotate(-15deg);
+}
+
+#crack_img:hover ~ #head_img {
+    transform: translate(15px, -4px) rotate(-15deg);
+}
+
+#crack_img.initial-animation {
+    position: absolute;
+    animation: translateCrack ease 750ms 1 forwards;
+}
+
+@keyframes translateCrack {
+    0% {
+        opacity: 0;
+        transform: translate(-100px, -100px) rotate(-15deg);;
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50px, -50px) rotate(-15deg);;
+    }
+    100% {
+        transform: translate(-7px, -7px) rotate(-15deg);
+    }
+
+}
+
+#head_img.initial-animation {
+    z-index: 1;
+    mix-blend-mode: difference;
+    animation: translateHead ease 750ms 1 forwards;
+}
+
+@keyframes translateHead {
+    0% {
+        opacity: 0;
+        transform: translate(-200px, -200px) rotate(-15deg);;
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50px, -50px) rotate(-15deg);;
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+
+}
+
+#headerBlock.initial-animation {
+    animation: translateHeaderBlock ease 700ms 1 forwards;
+}
+
+@keyframes translateHeaderBlock {
+    0% {
+        opacity: 0;
+        transform: translate(-90px, -90px) rotate(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-15deg);
+    }
+
+}
+
+#contacts.initial-animation, #contacts {
+    top: 20px;
+    right: 20px;
+    display: block;
+    position: absolute;
+    font-family: Arial, serif;
+    font-size: 14pt;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 0;
+    background-color: transparent;
+    color: white;
+    transition: all 500ms;
+}
+
+#page.initial-animation, #page {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 60px;
+    width: 700px;
+
+    font-family: Arial, serif;
+    font-size: 70pt;
+    cursor: pointer;
+    font-weight: bold;
+    border: 10px solid white;
+    border-radius: 0;
+    background-color: transparent;
+    color: white;
+    overflow: hidden;
+    transition: all 500ms;
+}
+
+#page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(255, 0, 85, 0.9);
+    transition: all 500ms;
+    transform: translateX(-100%);
+}
+
+#page:hover::before {
+    transform: translateX(0);
+}
+
+#page:hover {
+    transform: scale(1.2) skew(-10deg);
+    border-color: #4bbec0;
+}
+
+#back_credit.initial-animation, #back_credit {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    font-family: Arial, serif;
+    font-size: 12pt;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 500ms;
+}
+
+#back_credit.initial-animation a, #back_credit a {
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.51);
+}
+
+#back_credit:hover {
+    transform: scale(1.05);
+}
+
+#contacts.initial-animation, #page.initial-animation {
+    animation: buttonsFadeIn ease 700ms 1 forwards;
+}
+
+#back_credit.initial-animation {
+    animation: opacityFadeIn ease 700ms 1 forwards;
+}
+
+@keyframes buttonsFadeIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes opacityFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#head_img {
+    transform: rotate(-15deg);
+    transition: transform 500ms ease;
+}
+
+#headerBlock {
+    transform: rotate(-15deg);
+    transition: transform 500ms ease;
+}
+
+#headerBlock:hover {
+    transform: translate(20px, -5px) rotate(-15deg);
+}
+
+#contacts:hover {
+    transform: scale(1.05) skew(-10deg);
+    border-color: #4bbec0;
+}
+
+#headerBlock h3 {
+    display: block;
+    font-family: Arial, serif;
+    font-size: 60pt;
+    margin: 0;
+    text-align: center;
+}
+
+

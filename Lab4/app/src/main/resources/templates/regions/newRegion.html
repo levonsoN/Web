@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Region Page</title>
+    <link rel="stylesheet" href="/generic.css">
+</head>
+<body>
+<h1>Create New Region Page</h1>
+<form th:method="POST" th:object="${region}">
+    <h3>Enter Region Info</h3>
+    <label for="nameInput">Region Name:</label>
+    <input id="nameInput" name="name" type="text">
+    <p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+    <br>
+    <label for="areaInput">Region Area:</label>
+    <input id="areaInput" name="area" type="number" step="0.01" min="0" value="0">
+    <p class="error" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></p>
+    <br>
+    <button type="submit">Create</button>
+</form>
+<hr>
+<a href="/regions">Back to the Regions list</a>
+</body>
+</html>

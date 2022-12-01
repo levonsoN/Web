@@ -1,0 +1,40 @@
+table, th, td {
+    border: 1px solid;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.content {
+    display: inline-block;
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: #f64646;
+}
+
+.inline-form {
+    display: inline-block;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+a.no-style {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.no-style:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
